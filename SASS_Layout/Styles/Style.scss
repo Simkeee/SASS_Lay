@@ -1,0 +1,111 @@
+@import "./variables";
+
+@mixin boxes($bgcol) {
+    width: 300px;
+    height: 200px;
+    color: $color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgcol;
+}
+
+body {
+    font-family: sans-serif;
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .container {
+    width: 960px;
+    margin: auto auto;
+  }
+  
+  .nav-container-new {
+    width: 960px;
+    margin: auto auto;
+    height: 50px;
+    background-color:$background-color1;
+    position: relative;
+    .nav-bar-new {
+        display: flex;
+        float: right;
+        margin: 16px;
+      }
+      
+      .nav-link-new {
+        color: $color;
+        padding-right: 15px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      
+      ul {
+        list-style: none;
+      }
+  }  
+
+  .hero-section {
+    display: flex;
+    img {
+        width: 100%;
+        height: 100%;
+      }
+      .left-img {
+        width: 50%;
+      }
+      .right-img {
+        width: 50%;
+      }
+  }
+  
+  .main-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card-wrapper {
+        width: 300px;
+        margin-right: 10px;
+        margin-top: 10px;
+        .bg-div-red {
+            @include boxes($background-color1);
+          }
+          
+          .bg-div-blue {
+            @include boxes($background-color4);
+          }
+          
+          .bg-div-orange {
+            @extend .bg-div-blue;
+            background-color: $background-color2;
+          }
+          
+          .bg-div-green {
+            @extend .bg-div-blue;
+            background-color: $background-color3;
+          }
+      }
+  }
+  
+  .special-div {
+    background-color:$background-color2 ;
+    width: 300px;
+    height: 100%;
+    padding: 10px;
+    float: right;
+    margin-top: 10px;
+  }
+  
+  .footer {
+    height: 50px;
+    background-color: $background-color4;
+    color: $color;
+    display: flex;
+    margin-top: 30px;
+  }
+}
